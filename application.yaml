@@ -7,7 +7,7 @@ spec:
   source:
     repoURL: https://github.com/Junaid-447/argocd-app.git
     targetRevision: HEAD
-    path: microservice
+    path: microservices
   destination:
     server: https://kubernetes.default.svc
     namespace: myapp
