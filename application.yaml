@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name:
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Junaid-447/argocd-app.git
+    targetRevision: HEAD
+    path: microservice
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - Validate=false
