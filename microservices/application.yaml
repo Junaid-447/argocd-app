@@ -2,12 +2,13 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: my-argo-application
+  namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/Junaid-447/argocd-app.git
     targetRevision: HEAD
-    path: microservices
+    path: microservice-1
   destination:
     server: https://kubernetes.default.svc
     namespace: myapp
