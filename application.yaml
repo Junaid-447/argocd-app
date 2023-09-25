@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name:
+  name: my-argo-application
 spec:
   project: default
   source:
@@ -10,10 +10,10 @@ spec:
     path: microservice
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: myapp
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
-    - Validate=false
+    - CreateNamespace=true
